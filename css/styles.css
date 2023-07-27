@@ -1,0 +1,407 @@
+:root {
+  --primary-first-brand-color: #4d5ae5;
+  --primary-second-brand-color: #2e2f42;
+  --primary-body-color: #434455;
+  --primary-body-cloud: #f4f4fd;
+  --primary-white-color: #fff;
+  --primary-font: 'Raleway', sans-serif;
+  --primary-accent-color: #f4f4fd;
+  --secondary-accent-color: #e7e9fc;
+  --active-link-color: #404bbf;
+}
+
+/* border-box - не вказуємо, бо він значиться у нормалізаторі 
+   значення - margin: 0; - в body теж не вказуємо, бо він є у нормалізаторі
+*/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--primary-body-color);
+  background-color: var(--primary-white-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+img {
+  display: block;
+}
+
+/* для елементів, що не відображаються, але повинні бути для правильного синтаксису */
+.visually-hidden {
+  background-color: green;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* для тегов ul */
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.list li {
+  margin-right: 24px;
+}
+
+.list li:last-child {
+  margin-right: 0;
+}
+
+/* для тегов a */
+.link {
+  text-decoration: none;
+}
+
+/* для тегов div */
+.container {
+  max-width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*  хедер */
+
+.header-page {
+  background-color: var(--primary-white-color);
+  border-bottom: 1px solid var(--secondary-accent-color);
+}
+
+.header-page .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.header-page .logo-up {
+  display: flex;
+  align-items: center;
+}
+
+.header-page .container .address-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*  */
+
+.logo {
+  color: var(--primary-first-brand-color);
+  font-family: var(--primary-font);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.17;
+  letter-spacing: 0.54px;
+  text-transform: uppercase;
+  margin-right: 76px;
+}
+
+.logo .logo-two {
+  color: var(--primary-second-brand-color);
+}
+/* 2 часть в лого в футере */
+.logo .logo-three {
+  color: var(--primary-body-cloud);
+}
+
+/* меню */
+.header-list {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+}
+
+.logo-up .list {
+  gap: 40px;
+}
+
+.address-title .list {
+  gap: 40px;
+}
+
+.header-list:last-child {
+  margin-right: 0;
+}
+
+.header-page .link {
+  padding: 24px 0;
+}
+
+.list .link {
+  color: var(--primary-second-brand-color);
+}
+
+.list .link:hover,
+.list .link:focus,
+.list .link:active {
+  color: var(--active-link-color);
+}
+
+/* адрес */
+.address-list {
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+}
+
+.address-list:last-child {
+  margin-right: 0;
+}
+
+.address-title .link,
+.address-title .link {
+  color: var(--primary-body-color);
+}
+
+.address-title .link:hover,
+.address-title .link:focus,
+.address-title .link:active {
+  color: var(--active-link-color);
+}
+
+/* оснований контент */
+/* перша секція  привартає  основну увагу та кнопка */
+main {
+  flex-grow: 1;
+}
+
+.main-focus {
+  background-color: var(--primary-second-brand-color);
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 188px 0;
+}
+
+.main-focus-text {
+  max-width: 496px;
+}
+
+.main-focus-text {
+  text-align: center;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.07;
+  letter-spacing: 1.12px;
+  color: var(--primary-white-color);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px;
+}
+
+.main-button {
+  text-align: center;
+  color: var(--primary-white-color);
+  background-color: var(--primary-first-brand-color);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+  cursor: pointer;
+  display: block;
+  min-width: 169px;
+  height: 56px;
+  border-radius: 4px;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-focus .main-button:hover,
+.main-focus .main-button:focus,
+.main-focus .main-button:active {
+  background-color: var(--active-link-color);
+}
+/* 2 секція */
+.section-two {
+  padding: 120px 0;
+}
+
+.section-two-hp {
+  flex-basis: calc((100% - 72px) / 4);
+}
+
+.main-center-advantages {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.4px;
+  color: var(--primary-second-brand-color);
+  margin-bottom: 8px;
+  padding-left: 0;
+}
+
+.main-advantage-description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+  color: var(--primary-body-color);
+  margin: 0;
+}
+
+/* 3 секція */
+.main-production {
+  padding-bottom: 120px;
+}
+
+.production-list {
+  flex-basis: calc((100% - 48px) / 3);
+}
+
+.main-title {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.72px;
+  color: var(--primary-second-brand-color);
+}
+
+/* 4 секція */
+.main-our-team {
+  background-color: var(--primary-body-cloud);
+  padding: 120px 0;
+}
+
+.main-title {
+  margin-bottom: 72px;
+}
+
+.our-team-list {
+  background-color: var(--primary-white-color);
+  flex-basis: calc((100% - 72px) / 4);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.worker {
+  padding: 32px 0;
+  text-align: center;
+}
+
+/* footer */
+.bootom-page {
+  background-color: var(--primary-second-brand-color);
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.bootom-page .logo {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.bootom-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+  color: var(--primary-body-cloud);
+  max-width: 264px;
+}
+
+/* портфоліо */
+
+.page-list {
+  list-style: none;
+  text-align: center;
+}
+
+.page-list:last-child {
+  margin-right: 0;
+}
+
+.portfolio-list {
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
+
+.portfolio-list .list {
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 48px;
+}
+
+.page-list .link {
+  color: var(--primary-first-brand-color);
+  background-color: var(--primary-accent-color);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+  cursor: pointer;
+  padding: 12px 24px;
+  border: 1px solid var(--secondary-accent-color);
+  border-radius: 4px;
+}
+
+.portfolio-list .filter-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 48px;
+}
+
+.filter-list {
+  margin-bottom: 72px;
+  list-style-type: none;
+}
+
+.filter-list .page-list {
+  margin-right: 24px;
+}
+
+.filter-list .page-list:last-child {
+  margin-right: 0;
+}
+
+.page-list .link:hover,
+.page-list .link:focus,
+.page-list .link:active {
+  color: var(--primary-white-color);
+  background-color: var(--active-link-color);
+  border: 1px solid transparent;
+}
+
+.portfolio-list .offers-about {
+  padding: 32px 16px;
+  border: 1px solid var(--secondary-accent-color);
+  border-top: none;
+}
+
+.portfolio-list .link:last-child {
+  margin-right: 0;
+}
+
+.offers:nth-child(3n) {
+  margin-right: 0; /* Обнулення відступу для кожного третього пункту списку */
+}
+/* Для останніх трьох пунктів списку обнулюємо вертикальний відступ */
+.offers:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
