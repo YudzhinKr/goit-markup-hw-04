@@ -8,6 +8,9 @@
   --primary-accent-color: #f4f4fd;
   --secondary-accent-color: #e7e9fc;
   --active-link-color: #404bbf;
+  --primary-sub-text-color: #8e8f99;
+  --primary-success-color: #31d0aa;
+  --primary-modal-back-color: #fcfcfc;
 }
 
 /* border-box - не вказуємо, бо він значиться у нормалізаторі 
@@ -133,6 +136,9 @@ img {
   letter-spacing: 0.32px;
 }
 
+.header-list.current {
+}
+
 .logo-up .list {
   gap: 40px;
 }
@@ -147,6 +153,18 @@ img {
 
 .header-page .link {
   padding: 24px 0;
+  position: relative;
+}
+
+.header-list .link.current:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--active-link-color);
 }
 
 .list .link {
@@ -155,7 +173,8 @@ img {
 
 .list .link:hover,
 .list .link:focus,
-.list .link:active {
+.list .link:active,
+.link.current {
   color: var(--active-link-color);
 }
 
@@ -194,6 +213,14 @@ main {
   align-items: center;
   flex-wrap: wrap;
   padding: 188px 0;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office\ .jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 .main-focus-text {
@@ -228,6 +255,8 @@ main {
   border: none;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  overflow: hidden;
 }
 
 .main-focus .main-button:hover,
@@ -235,9 +264,85 @@ main {
 .main-focus .main-button:active {
   background-color: var(--active-link-color);
 }
+
+/* modal window */
+
+.is-hidden {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  background-color: red;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 408px;
+  min-height: 584px;
+  background-color: var(--primary-modal-back-color);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 4px;
+}
+.modal-window-content {
+  background-color: green;
+  border: 2px solid var(--primary-success-color);
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.main-button:active .modal-window {
+  transform: translateY(0);
+}
+
+.modal-window-close {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top: 24px;
+  margin-left: 360px;
+  width: 24px;
+  height: 24px;
+  border-radius: 5dvh;
+  background-color: var(--secondary-accent-color);
+  cursor: pointer;
+}
+
+.modal-window-close:hover {
+  background-color: var(--active-link-color);
+}
+
+.modal-close-icon {
+  fill: var(--primary-second-brand-color);
+}
+
+.modal-close-icon:focus,
+.modal-close-icon:hover {
+  fill: var(--primary-white-color);
+}
 /* 2 секція */
 .section-two {
   padding: 120px 0;
+}
+
+.section-two-logo {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 264px;
+  height: 112px;
+  background-color: var(--primary-body-cloud);
 }
 
 .section-two-hp {
@@ -282,6 +387,25 @@ main {
   color: var(--primary-second-brand-color);
 }
 
+.worker-list {
+  list-style-type: none;
+  margin: 8px 16px 0;
+  padding: 0;
+  display: flex;
+  justify-items: center;
+  flex-wrap: wrap;
+}
+
+.worker-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-first-brand-color);
+}
+
 /* 4 секція */
 .main-our-team {
   background-color: var(--primary-body-cloud);
@@ -303,11 +427,62 @@ main {
   text-align: center;
 }
 
+.icon {
+  fill: var(--primary-accent-color);
+}
+
+/* 5 секция */
+.customers {
+  background-color: var(--primary-white-color);
+  padding: 120px 0;
+}
+
+.customers-title {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.72px;
+  color: var(--primary-second-brand-color);
+  margin-bottom: 72px;
+}
+
+.customers-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.customers-icon {
+  border: 1px solid var(--primary-sub-text-color);
+  border-radius: 4px;
+  margin-right: 24px;
+}
+
+.customers-icon:last-child {
+  margin-right: 0;
+}
+
+.icon-logo {
+  padding: 16px 32px;
+  fill: var(--primary-sub-text-color);
+}
+
+.icon-logo:hover {
+  fill: var(--active-link-color);
+}
+.customers-icon:hover {
+  border: 1px solid var(--active-link-color);
+}
+
 /* footer */
 .bootom-page {
   background-color: var(--primary-second-brand-color);
   padding-top: 100px;
   padding-bottom: 100px;
+  display: flex;
 }
 
 .bootom-page .logo {
@@ -322,6 +497,41 @@ main {
   letter-spacing: 0.32px;
   color: var(--primary-body-cloud);
   max-width: 264px;
+}
+
+.social-media-title {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+  color: var(--primary-white-color);
+}
+
+.social-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.footer-icon {
+  margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-first-brand-color);
+}
+
+.footer-icon:last-child {
+  margin-bottom: 0;
+}
+
+.footer-icon:hover {
+  background-color: var(--primary-success-color);
 }
 
 /* портфоліо */
@@ -344,6 +554,35 @@ main {
   justify-content: center;
   flex-wrap: wrap;
   row-gap: 48px;
+}
+
+.overlay-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+  color: var(--primary-accent-color);
+  padding: 40px 32px 0 32px;
+}
+
+.img-about {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  background-color: var(--primary-first-brand-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 250ms ease-in-out;
+  transform: translateY(100%);
+}
+
+.img-about:hover .overlay {
+  transform: translateY(0);
 }
 
 .page-list .link {
