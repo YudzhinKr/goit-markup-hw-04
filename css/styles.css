@@ -110,7 +110,6 @@ img {
 }
 
 .address-title {
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /* якщо не підійде, то засунь це у просто address-list */
 }
 
@@ -151,6 +150,10 @@ img {
 
 .logo-up .list {
   gap: 40px;
+}
+
+.logo-up .link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-title .list {
@@ -204,6 +207,7 @@ img {
 .address-title .link,
 .address-title .link {
   color: var(--primary-body-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-title .link:hover,
