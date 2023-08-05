@@ -661,10 +661,7 @@ main {
 
 .img-about {
   position: relative;
-  overflow: hidden;
-}
 
-.overlay {
   background-color: var(--primary-first-brand-color);
   position: absolute;
   top: 0;
@@ -676,6 +673,7 @@ main {
 }
 
 .overlay-text {
+  overflow: hidden;
   position: absolute;
   top: 0;
   font-size: 16px;
