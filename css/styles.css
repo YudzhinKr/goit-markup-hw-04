@@ -612,10 +612,6 @@ main {
 .page-list {
   list-style: none;
   text-align: center;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-list:last-child {
@@ -639,6 +635,7 @@ main {
 
 .offers-link {
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .offers-link:hover,
@@ -679,6 +676,11 @@ main {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.overlay-text:hover,
+.overlay-text:focus {
+  transform: translateY(0%);
+}
+
 .img-about:hover .overlay {
   transform: translateY(0);
 }
@@ -695,6 +697,10 @@ main {
   padding: 12px 24px;
   border: 1px solid var(--secondary-accent-color);
   border-radius: 4px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-list:hover,
