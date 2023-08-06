@@ -444,9 +444,9 @@ main {
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
-.worker-photo {
-  padding: 32px 0;
-}
+/* .worker-photo {
+  padding: 32px 0; ---- 
+} */
 
 .worker {
   padding: 32px 0;
@@ -458,6 +458,7 @@ main {
   padding: 0;
   display: flex;
   justify-content: center;
+  gap: 24px;
 }
 .worker-list:last-child {
   gap: 0;
@@ -470,6 +471,7 @@ main {
 .worker-icon {
   display: flex;
   justify-content: center;
+  gap: 24px;
   align-items: center;
   width: 40px;
   height: 40px;
